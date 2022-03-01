@@ -11,6 +11,7 @@
 		8F72466327CE916400CB2849 /* PickupTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F72466227CE916400CB2849 /* PickupTimeView.swift */; };
 		8F72466527CE944400CB2849 /* ConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F72466427CE944400CB2849 /* ConfirmationView.swift */; };
 		8F72466A27CED71A00CB2849 /* EstimatedCostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F72466927CED71A00CB2849 /* EstimatedCostView.swift */; };
+		8F72466C27CEDCCB00CB2849 /* EquipmentDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F72466B27CEDCCB00CB2849 /* EquipmentDetails.swift */; };
 		8F83899A27C3DF1200981385 /* SwiftUISamplesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F83899927C3DF1200981385 /* SwiftUISamplesApp.swift */; };
 		8F83899C27C3DF1200981385 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F83899B27C3DF1200981385 /* ContentView.swift */; };
 		8F83899E27C3DF1300981385 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F83899D27C3DF1300981385 /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 		8F72466227CE916400CB2849 /* PickupTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupTimeView.swift; sourceTree = "<group>"; };
 		8F72466427CE944400CB2849 /* ConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationView.swift; sourceTree = "<group>"; };
 		8F72466927CED71A00CB2849 /* EstimatedCostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstimatedCostView.swift; sourceTree = "<group>"; };
+		8F72466B27CEDCCB00CB2849 /* EquipmentDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentDetails.swift; sourceTree = "<group>"; };
 		8F83899627C3DF1200981385 /* SwiftUISamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUISamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F83899927C3DF1200981385 /* SwiftUISamplesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUISamplesApp.swift; sourceTree = "<group>"; };
 		8F83899B27C3DF1200981385 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 				8F8389A727C4D98600981385 /* RateCalendarCell.swift */,
 				8F8389A927C4DD5900981385 /* RadioButton.swift */,
 				8F72466927CED71A00CB2849 /* EstimatedCostView.swift */,
+				8F72466B27CEDCCB00CB2849 /* EquipmentDetails.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 				8F72466A27CED71A00CB2849 /* EstimatedCostView.swift in Sources */,
 				8F83899A27C3DF1200981385 /* SwiftUISamplesApp.swift in Sources */,
 				8F72466527CE944400CB2849 /* ConfirmationView.swift in Sources */,
+				8F72466C27CEDCCB00CB2849 /* EquipmentDetails.swift in Sources */,
 				8F8389AA27C4DD5900981385 /* RadioButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
