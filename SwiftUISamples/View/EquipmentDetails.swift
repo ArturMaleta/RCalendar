@@ -1,11 +1,14 @@
 import SwiftUI
 
-struct EquipmentDetails: View {
-    let transaction: Transaction
+struct TwoLineImageView: View {
+    let imageURL: URL?
+    let title: String
+    let subtitle: String
     
     var body: some View {
-        HStack {
-            AsyncImage(url: transaction.imageUrl) { phase in
+        
+        HStack(spacing: .zero) {
+            AsyncImage(url: imageURL) { phase in
                 if let image = phase.image {
                     image.resizable()
                 } else if phase.error != nil {
@@ -14,18 +17,37 @@ struct EquipmentDetails: View {
                     Color.blue
                 }
             }
-            .frame(width: 60, height: 60)
-            .padding(EdgeInsets(top: 0, leading: 15, bottom: 0, trailing: 15))
-            VStack {
-                Text("Equipment ID: \(transaction.equipmentId)")
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .foregroundColor(Color(red: 142/255, green: 142/255, blue: 147/255))
-                Text(transaction.name)
+            .frame(width: Constants.imageSize, height: Constants.imageSize)
+            .padding(.horizontal, URPaddings.medium)
+            
+            VStack(alignment: .leading) {
+                Text(subtitle)
+                    .foregroundColor(.secondary)
+                    .font(.subheadline)
+                Text(title)
                     .multilineTextAlignment(.leading)
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .font(.title)
             }
-            .padding(EdgeInsets(top: 0, leading: -5, bottom: 0, trailing: 15))
+            .padding(.trailing, URPaddings.medium)
+            
+            Spacer()
         }
-        .padding(EdgeInsets(top: 16, leading: 0, bottom: 10, trailing: 0))
+        .padding(.vertical, URPaddings.medium)
     }
+    
+    private enum Constants {
+        static var imageSize: CGFloat = 60.0
+    }
+}
+
+extension TwoLineImageView {
+    init(transaction: Transaction) {
+        self.init(imageURL: transaction.imageUrl, title: transaction.name, subtitle: "Equipment ID: \(transaction.equipmentId)")
+    }
+}
+
+struct URPaddings {
+    static let small: CGFloat = 8.0
+    static let medium: CGFloat = 16.0
+    static let large: CGFloat = 32.0
 }

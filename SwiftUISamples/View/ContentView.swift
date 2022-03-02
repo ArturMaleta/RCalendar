@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var viewModel = RateCalendarViewModel()
+    @StateObject var viewModel = RateCalendarViewModel()
     
     init() {
         let coloredAppearance = UINavigationBarAppearance()
@@ -19,24 +19,23 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
-                EquipmentDetails(transaction: viewModel.transaction)
+                TwoLineImageView(transaction: viewModel.transaction)
                     .onAppear {
                         viewModel.fetchTransaction()
                     }
                 
                 Divider()
-                    .padding(EdgeInsets(top: 0, leading: 15, bottom: 30, trailing: 0))
+                    .padding(.bottom, URPaddings.large)
                 
                 Text("First, choose the date you’d like to return the selected equipment.")
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(EdgeInsets(top: 0, leading: 15, bottom: 15, trailing: 0))
+                    .padding(.bottom, 15)
                 
                 HStack {
                     Text("Pickup Date")
                     Spacer()
                     Image("ic_small_calendar")
                 }
-                .padding(EdgeInsets(top: 5, leading: 15, bottom: 0, trailing: 15))
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 0) {
@@ -46,16 +45,16 @@ struct ContentView: View {
                         }
                     }
                     .border(Color.gray, width: 2)
-                    .padding(EdgeInsets(top: 0, leading: 15, bottom: 0, trailing: 15))
                 }
                 .onAppear(perform: viewModel.fetchLeniencyRates)
+                .padding(.horizontal, -15)
                 
                 Spacer()
                 
                 EstimatedCostView(cost: viewModel.estimatedCost)
                 
                 Divider()
-                    .padding(EdgeInsets(top: 0, leading: 15, bottom: 10, trailing: 0))
+                    .padding(EdgeInsets(top: 0, leading: URPaddings.medium, bottom: URPaddings.small, trailing: 0))
                 
                 NavigationLink(destination: PickupTimeView(viewModel: viewModel)) {
                     Text("Next")
@@ -65,6 +64,7 @@ struct ContentView: View {
                 }
                 .padding(EdgeInsets(top: 0, leading: 16, bottom: 16, trailing: 16))
             }
+            .padding(.horizontal, URPaddings.medium)
             .navigationBarItems(
                 trailing: Button("Cancel") {
                     print("close whole request pickup")

@@ -5,7 +5,7 @@ struct PickupTimeView: View {
     
     var body: some View {
             VStack {
-                EquipmentDetails(transaction: viewModel.transaction)
+                TwoLineImageView(transaction: viewModel.transaction)
                     .onAppear {
                         viewModel.fetchTransaction()
                     }
